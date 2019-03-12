@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html lang="pl">
+
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css" type="text/css"/>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <script>
+            $(document).ready(function () {
+
+                    $('a[href^="#"]').on('click', function (event) {
+
+                        var target = $($(this).attr('href'));
+
+                        if (target.length) {
+                            event.preventDefault();
+                            $('html, body').animate({
+                                scrollTop: target.offset().top
+                            }, 1000);
+                        }
+                    });
+
+                });
+        </script>
+    </head>
+
+    <body>
+        <div class="container">
+            <!--Pasek menu-->
+            <div class="menu">
+                <a href='#main' class='menuButton'>Home</a>
+                <a href='#aboutMe' class='menuButton'>O mnie</a>
+                <a href='#portfolio' class='Button'>Portfolio</a>
+                <a href='#contact' class='menuButton'>Kontakt</a>
+            </div>
+            <!--Główna część strony-->
+            <div id='main' class="main">
+                <div class="circlePhoto"></div>
+                <p>Szymon Oberbek</p>
+                <p>Web developer</p>
+            </div>
+            <!--Część z informacjami-->
+            <div class="info">
+                <div id='aboutMe' class="aboutMe"><h1>O mnie</h1>
+                    <p>Studiuję Finanse i Rachunkowość na Uniwersytecie Ekonomicznym we Wrocławiu. Interesuję się programoawniem oraz szeroko pojętym biznesem.</p> </div>
+                <div id='portfolio' class="portfolio"><h1>Portfolio</h1>
+                    <p>Jeśli chcesz zobaczyć moje projekty zerknij na GitHuba <a href="https://github.com/SzymonOberbek" target="_blank" >https://github.com/SzymonOberbek</a></p> </div>
+            </div>
+            <!--Formularz kontaktowy-->
+            <div id='contact' class="contact"><h1>Kontakt</h1>
+            <label>Imię<input type="text"></label>
+            <label>Nazwisko<input type="text"></label>
+            <label>E-mail<input type="email"></label>
+            <label>Wiadomość<textarea rows="5" cols="50"></textarea></label>
+            </div>
+            <!--Stopka-->
+            <div id="footer">Footer</div>
+
+        </div>
+        <script>
+            $(document).ready(function () {
+
+            });
+        </script>
+        <script>var today = new Date();
+            var year = today.getFullYear();
+
+            var el = document.getElementById('footer');
+            el.innerHTML = '<p>Copyright &copy;' + year + '</p>';</script>
+        </div>
+    </body>
+
+</html>
